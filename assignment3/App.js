@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView,TextInput, SectionList } from 'react-native';
 
-import { Button } from 'react-native';
+import { Button, FlatList } from 'react-native';
  
 const Ongoing =[
   {
@@ -16,6 +16,7 @@ const Ongoing =[
   }
 ];
 
+
 const Item = ({ title }) => (
   <Text style={{ fontSize: 20 }}>{title}</Text>
 );
@@ -28,19 +29,32 @@ export default function App() {
     
     
         <View style={styles.container}>
-      <Text style ={{ fontWeight: 'bold', fontSize: 2.5}}>
-        Hello devs
-       
+      <Text style ={styles.titletext}> 
+        Hello Devs
       </Text>
 
       <Text style={{fontWeight:'200'}}>
         14 tasks today
       </Text>
-     
-     
+      
+     <View>
      <TextInput style={styles.maxInput}
        placeholder='Search'>
       </TextInput>
+      <Button title='max' style={styles.maxbtn}/>
+
+      
+     </View>
+     
+     
+
+      <View>
+        <Text style={{fontWeight: 'bold', fontSize: 24}}>
+          Categories
+        </Text>
+
+    
+      </View>
 
      
 
@@ -69,8 +83,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#C4A484',
-    alignItems: 'center',
+    backgroundColor: '#f7f0e8',
     justifyContent: 'center',
   },
   maxInput: {
@@ -79,7 +92,7 @@ const styles = StyleSheet.create({
     
   },
   item: {
-    backgroundColor: '#E1D9D1',
+    backgroundColor: '#fbf9f7',
     padding: 20,
     marginVertical: 8,
     borderRadius: 25,
@@ -88,13 +101,29 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 25,
-    backgroundColor: '#fff',
     height: 70,
     fontWeight: 'bold',
 
   },
   title: {
     fontSize: 24,
+    
+  },
+
+  titletext:{
+    height: 50,
+    alignItems:'flex-start',
+    fontWeight:'bold',
+    fontSize: 25,
+    marginTop: 30,
+    
+  },
+  maxInput:{
+    height: 50,
+    alignItems:'center',
+    backgroundColor:'#fbf9f7'
+  },
+  maxbtn: {
     
   }
 });
