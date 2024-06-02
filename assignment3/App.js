@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView,TextInput, SectionList } from 'react-native';
 
-import { Button, FlatList } from 'react-native';
+import { Button, Image } from 'react-native';
  
 const Ongoing =[
   {
@@ -30,7 +30,7 @@ export default function App() {
     
         <View style={styles.container}>
       <Text style ={styles.titletext}> 
-        Hello Devs
+        Hello, Devs
       </Text>
 
       <Text style={{fontWeight:'200'}}>
@@ -41,7 +41,7 @@ export default function App() {
      <TextInput style={styles.maxInput}
        placeholder='Search'>
       </TextInput>
-      <Button title='max' style={styles.maxbtn}/>
+     
 
       
      </View>
@@ -52,6 +52,8 @@ export default function App() {
         <Text style={{fontWeight: 'bold', fontSize: 24}}>
           Categories
         </Text>
+
+        <Image style={{backgroundColor:'#f7f0e8'}} source={require("./Group 9.png")}/>
 
     
       </View>
@@ -123,7 +125,5 @@ const styles = StyleSheet.create({
     alignItems:'center',
     backgroundColor:'#fbf9f7'
   },
-  maxbtn: {
-    
-  }
+
 });
